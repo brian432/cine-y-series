@@ -1,0 +1,15 @@
+.title {
+  position: relative;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+  width: 90%;
+  height: 3px;
+  background: linear-gradient(to right, var(--color-button), transparent);
+  transform: skewX(-45deg);
+  transform-origin: left bottom;
+}

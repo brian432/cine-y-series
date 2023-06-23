@@ -1,0 +1,70 @@
+.burguer{
+  display: block;
+  cursor: pointer;
+}
+
+.burguer div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.linea1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.linea2 {
+  opacity: 0;
+}
+.linea3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media screen and (min-width: 424px) {
+  .wrapperBurguer{
+    display: none;
+  }
+}
+
+.navWrapper nav{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.navWrapper{
+  position: absolute;
+  top: 8vh;
+  height: 92vh;
+  right: 0;
+  animation: menuDisable .5s forwards;
+  overflow: hidden;
+  background-color: var(--secondary-color);
+}
+.menuActive {
+  transform: translateX(0%)!important;
+  animation: menuActive .5s forwards;
+}
+
+@keyframes menuActive {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes menuDisable {
+  0% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0%;
+  }
+}

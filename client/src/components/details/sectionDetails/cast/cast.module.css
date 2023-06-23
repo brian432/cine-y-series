@@ -1,0 +1,19 @@
+.castWrapper {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.cast {
+  width: 80px;
+  transition: 0.3s;
+}
+
+.cast img {
+  border-radius: var(--border-radius);
+}
+
+.cast:hover {
+  scale: 1.03;
+  transition: 0.3s;
+}

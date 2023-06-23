@@ -1,0 +1,42 @@
+Preguntas de entrevistas
+
+1) ¿Cuál es la diferencia entre el cliente y el servidor en una arquitectura de aplicaciones web?
+
+	El cliente se ejecuta en el navegador y se encarga de la interfaz del usuario y la interaccion con el usuario
+
+	El servidor se encarga de manejar la logica de negocio el almacenamiento de datos y la comunicacion con otros sistemas
+
+2) ¿Qué es Express y por qué es popular en el desarrollo de aplicaciones Node.js?
+
+	Express es un framework para nodejs, que simplifica el desarrollo de aplicaciones web debido a su capacidad de manejar rutas midlewares y solicitudes http
+
+3) ¿Cómo gestionas el manejo de rutas en Express? ¿Puedes mencionar algún ejemplo de middleware que hayas utilizado?
+
+	En Express, el manejo de rutas se realiza utilizando métodos de enrutamiento como get, post, put, delete, entre otros.
+
+4) ¿Cuál es la diferencia entre el state y el props en React?
+
+	El estate representa los datos internos de un componente y las props son objetos que se pasan a un componente desde un componente padre, se utilizan para pasar datos de un componente a otro
+
+5) ¿Qué es un componente controlado en React y cuál es su ventaja?
+
+	Son componentes controlados porque el valor de entrada de los elementos, como los inputs en un formulario, se controlan mediante un estado de react.
+
+6) ¿Qué es el virtual DOM en React y cómo mejora el rendimiento de las aplicaciones?
+
+	Es una representacion del DOM real, se utiliza para optimizar las actualizaciones de la interfaz de usuario, en lugar de actualizar el dom real cada vez que hay un cambio, react compara el dom virtual con el real, indentifica las diferencias y realiza actualizaciones minimas en el dom real
+
+7) ¿Qué son los hooks en React y cómo los has utilizado en tus proyectos?
+
+	Los hooks en React son funciones especiales que permiten el uso de características de React, como el estado y los efectos secundarios
+	
+
+8) ¿Has trabajado con librerías de gestión de estado en React, como Redux o Context API? ¿Cuál prefieres y por qué?
+
+	SOn soluciones para la gestion del estado en react
+
+9) ¿Cómo manejas las solicitudes asíncronas en React utilizando bibliotecas como Axios o fetch?
+
+	
+
+10) ¿Puedes explicar cómo funciona la autenticación y autorización en una aplicación Node.js/Express con JSON Web Tokens (JWT)?

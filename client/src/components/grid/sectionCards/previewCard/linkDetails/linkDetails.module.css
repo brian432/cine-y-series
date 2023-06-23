@@ -1,0 +1,32 @@
+.link{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  grid-area: details;
+  z-index: 9;
+}
+
+.link a{
+  width: 120px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link span{
+  color: #f5be08;
+}
+
+.link span:before {
+  content: "★";
+  margin-right: 2px;
+}
+
+@media screen and (min-width: 1024px) {
+  .link a{
+    width: 200px;
+    height: 70px;
+    font-size: 1.5rem;
+  }
+}

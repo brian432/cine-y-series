@@ -1,0 +1,11 @@
+.nav{
+  display: none;
+}
+
+@media screen and (min-width: 424px) {
+  .nav{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+}

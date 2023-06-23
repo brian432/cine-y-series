@@ -1,0 +1,35 @@
+.wrapperCard {
+  width: 100%;
+  max-width: 310px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin: 0 auto;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+}
+
+.wrapperCard span {
+  color: #f5be08;
+}
+
+.wrapperCard span:before {
+  content: "★";
+  margin-right: 2px;
+}
+
+.image {
+  width: 100%;
+  height: 375px;
+  object-fit: cover;
+  object-position: top;
+  transition: 0.3s;
+  border-radius: var(--border-radius);
+}
+
+.image:hover {
+  scale: 1.02;
+  transition: 0.3s;
+}

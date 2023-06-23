@@ -1,0 +1,26 @@
+.menuFilter{
+  display: flex;
+  gap: 1rem;
+}
+
+.wrapperSelect{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.wrapperSelect div{
+  color: black!important;
+  cursor: pointer;
+}
+
+.wrapperSelect div:hover{
+  border-color: var(--color-button);
+}
+
+@media screen and (min-width: 768px) {
+  .wrapperSelect{
+    width: initial;
+  }
+}

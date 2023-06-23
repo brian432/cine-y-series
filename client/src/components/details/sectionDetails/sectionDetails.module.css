@@ -1,0 +1,54 @@
+.background {
+  height: 500px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  z-index: -1;
+}
+
+
+.background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .15);
+}
+
+.background::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, var(--primary-color) 100%);
+}
+
+.background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+@media screen and (min-width: 1024px) {
+  .background {
+    height: 800px !important;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .background {
+    height: 700px;
+  }
+}

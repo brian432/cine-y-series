@@ -1,0 +1,9 @@
+.wrapperFilters{
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+

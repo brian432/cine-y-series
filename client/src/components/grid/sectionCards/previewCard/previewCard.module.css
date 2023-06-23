@@ -1,0 +1,46 @@
+.sectionPreview {
+  height: 500px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "."
+    "title"
+    "pagination";
+}
+
+.title {
+  z-index: 9;
+  grid-area: title;
+  text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .sectionPreview {
+    padding: 0 0rem;
+    height: 700px !important;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .sectionPreview {
+    height: 600px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.2fr 0.8fr;
+    grid-template-areas:
+      "title ."
+      "details pagination";
+  }
+
+  .title {
+    align-self: center;
+    justify-content: center;
+    z-index: 9;
+    grid-area: title;
+    text-align: left;
+  }
+
+}

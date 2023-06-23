@@ -1,0 +1,8 @@
+1) Reveer las requests
+2) css de imagen de fondo de details y de slider son los mismos, convertirlo en reutilizable
+3) Limitar los caracteres del overview
+4) Las busquedas en search no funcionan del todo bien
+Ligthouse
+
+1) Agregar labels a los inputs
+2) Cambiar el contraste de los botones naranjas y las letras blancas

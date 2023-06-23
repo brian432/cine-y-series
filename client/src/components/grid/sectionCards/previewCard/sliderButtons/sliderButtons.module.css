@@ -1,0 +1,28 @@
+.buttons{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  grid-area: pagination;
+  justify-self: center;
+  z-index: 9;
+}
+
+.buttons img{
+  cursor: pointer;
+}
+
+.normal{
+  font-size: 1.5rem;
+}
+
+.selected{
+  font-size: 5rem;
+  color: var(--color-button);
+  font-weight: 200;
+}
+
+@media screen and (min-width: 768px) {
+  .buttons{
+    justify-self: end;
+  }
+}

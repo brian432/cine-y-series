@@ -1,0 +1,13 @@
+.sectionCards{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.wrapperCards{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
+  gap: 1rem;
+}
+
+

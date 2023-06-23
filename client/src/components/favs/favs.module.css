@@ -1,0 +1,29 @@
+.favouriteBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.16);
+  transition: 0.5s;
+  z-index: 9;
+}
+
+.favouriteBtn:hover {
+  background-color: #fc351b60;
+  scale: 1.3;
+  transition: 0.5s;
+}
+
+.favActive {
+  transform: rotate(360deg);
+  background-color: var(--color-button);
+  color: var(--color-button);
+}
