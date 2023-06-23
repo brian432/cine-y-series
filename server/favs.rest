@@ -1,0 +1,13 @@
+POST http://localhost:3001/favs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OTYyNDU1M2MwNTRmMDM0YTNmNWM4ZCIsImlhdCI6MTY4NzU2MTMxMSwiZXhwIjoxNjg3NjQ3NzExfQ.8rLyjsQFSEw_c9bFgaDlyCC1S6yqFO3CqS1jEAsXTeM
+
+{
+   "data":{
+    "poster_path":"dsadsad", 
+    "id": "dsadas", 
+    "title": "dadsa", 
+    "vote_average": 1232312 
+    },
+   "path": "dadsadas"
+}

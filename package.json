@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.2"
+  },
+  "dependencies": {
+    "express-validator": "^7.0.1"
+  }
+}
