@@ -86,10 +86,5 @@ export interface ReturnUseMoviesOrSeries {
 }
 
 
-//login types
 
-export interface IUser {
-  username: string
-  password: string
-}
 

@@ -2,17 +2,16 @@
 import { IUser } from '@/types/userTypes'
 import { Field, Form, Formik } from 'formik'
 import { userSchema } from '@/utils/yup'
-import { FC, useContext } from 'react'
+import { FC } from 'react'
 import Link from 'next/link'
-import { useLogin } from '@/hooks/useLogin'
+import { useCreateUser } from '@/hooks/useCreateUser'
 
-const Login: FC = ({ }) => {
-  const { mutate } = useLogin()
+const Register: FC = ({ }) => {
+  const { mutate } = useCreateUser()
   const initialValues: IUser = {
     username: '',
     password: ''
   }
-
   return (
     <main className='auth' style={{ marginTop: '300px' }}>
       <Formik
@@ -37,8 +36,8 @@ const Login: FC = ({ }) => {
                 <label htmlFor='password' className='label'>Password</label>
               </div>
               <div className='divButton'>
-                <button type='submit' className='btn'>Iniciar sesión</button>
-                <Link className="linkAuth" href="/register">Registrarse</Link>
+                <button type='submit' className='btn'>Registrarse</button>
+                <Link className="linkAuth" href="/login">Iniciar sesión</Link>
               </div>
             </Form>
           )
@@ -47,4 +46,4 @@ const Login: FC = ({ }) => {
     </main>
   )
 }
-export default Login
+export default Register

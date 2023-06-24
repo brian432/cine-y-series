@@ -2,6 +2,7 @@ import Header from '@/components/Header/Header'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { ReactQueryProvider } from './reactQueryProvider'
+import { Provider } from '@/context/LoggedState'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,10 +19,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        <ReactQueryProvider>
-          {children}
-        </ReactQueryProvider>
+        <Provider>
+          <Header />
+          <ReactQueryProvider>
+            {children}
+          </ReactQueryProvider>
+        </Provider>
       </body>
     </html>
   )
