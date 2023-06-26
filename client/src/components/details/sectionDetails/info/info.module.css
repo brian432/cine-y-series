@@ -59,11 +59,6 @@
   z-index: 9;
 }
 
-.genresWrapper a:hover {
-  font-size: clamp(1.3rem, 4.5vw, 1.6rem) !important;
-  transition: 0.3s;
-}
-
 @media screen and (min-width: 1200px) {
   .info {
     flex: 2;

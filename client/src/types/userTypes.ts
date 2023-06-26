@@ -1,5 +1,7 @@
 //login types
 
+import { DataHome } from "./commonTypes"
+
 export interface IUser {
   username: string
   password: string
@@ -35,9 +37,17 @@ export interface ILoginResponse {
   token: string
   username: string
   id: string
+  favs: string[]
 }
 
 export interface ResponseDataLogin {
   status_code: number
   data: ILoginResponse
+}
+
+//favs types
+
+export interface ResponseDataFavs {
+  status_code: number
+  data: DataHome
 }

@@ -1,0 +1,101 @@
+.auth {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  background-image: url('/auth.webp');
+}
+
+.formWrapper {
+  max-width: 500px;
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 1.5rem;
+  background-color: var(--secondary-color);
+}
+
+.inputsContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  gap: .1rem;
+}
+
+.inputsContainer input {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid var(--primary-color);
+  padding: 5px;
+  font-size: 1rem;
+  background: none;
+  color: white;
+}
+
+.inputsContainer input:focus {
+  border-bottom: 3px solid var(--hover-auth);
+}
+
+.inputsContainer input:focus~.label {
+  color: var(--hover-auth) !important;
+}
+
+.inputsContainer .campoObligatorio {
+  border-bottom: 2px solid var(--error-color) !important;
+}
+
+.inputsContainer .campoObligatorio~.label {
+  color: var(--error-color);
+}
+
+.inputsContainer .errorColor {
+  color: var(--error-color);
+  margin-top: .5rem;
+  font-size: 1.2rem;
+}
+
+.divButton {
+  margin-top: -1rem;
+}
+
+.linkAuth {
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.btn {
+  background-color: var(--color-button);
+  color: var(--primary-color);
+  border-radius: 5px;
+  border: none;
+  font-size: 18px;
+  font-weight: 700;
+  width: 100%;
+  height: 60px;
+}
+
+.btn:hover {
+  background-color: var(--hover-auth);
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+@media screen and (min-width: 425px) {
+  .formWrapper {
+    padding: 2rem;
+  }
+
+  .btn {
+    width: 150px;
+    margin-right: 1rem;
+  }
+}

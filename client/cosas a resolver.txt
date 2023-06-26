@@ -1,7 +1,8 @@
 1) Reveer las requests
 2) css de imagen de fondo de details y de slider son los mismos, convertirlo en reutilizable
 3) Limitar los caracteres del overview
-4) Las busquedas en search no funcionan del todo bien
+5) Solucionar el padding 1 rem del body, no me permite aplicar 100vh en algunos componentes como auth
+6) Cambiarle el color del boton del swal a naranja
 Ligthouse
 
 1) Agregar labels a los inputs

@@ -1,6 +1,10 @@
 .wrapperCard {
-  width: 100%;
+  position: relative;
   max-width: 310px;
+  width: 100%;
+}
+
+.wrapperCard a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;

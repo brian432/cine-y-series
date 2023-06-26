@@ -5,7 +5,6 @@ import MenuFilter from './menuFilter/MenuFilter'
 import { buildUrl } from '@/utils/buildUrl'
 import CastTitle from './castTitle/CastTitle'
 import NotResults from '../notResults/NotResults'
-import Loading from '@/app/loading'
 
 interface GridProps {
   path: string

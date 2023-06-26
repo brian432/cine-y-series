@@ -1,30 +1,43 @@
-import { FC } from 'react'
+import { FC, useContext } from 'react'
 import Image from 'next/image'
 import { DataHome } from '@/types/commonTypes'
 import styles from './card.module.css'
 import Link from 'next/link'
 import Favs from '@/components/favs/Favs'
+import { Context } from '@/context/LoggedState'
+import { usePostFavs } from '@/hooks/useFavs'
 
 interface CardProps {
   data: DataHome
   path?: string
 }
 const Card: FC<CardProps> = ({ data, path }) => {
+  const { state: { isLogged, favs } } = useContext(Context)
+  const favsActive = favs?.includes(`${data.id}`)
+  const { mutate } = usePostFavs()
+  const addOrRemoveFavs = () => {
+    mutate({ data, path })
+  }
   return (
-    <Link
-      className={styles.wrapperCard}
-      href={`${path ? '/movies' : '/series'}/details/${data.id}`}
-    >
-      <Favs />
-      <Image
-        src={data.poster_path ? `${process.env.API_IMAGE}${data.poster_path}` : '/noImg.webp'}
-        alt="My Image"
-        width={150}
-        height={225}
-        className={styles.image}
-      />
-      <h4>{data.title || data.name} | <span>{data?.vote_average?.toFixed(1)}</span></h4>
-    </Link>
+    <div className={styles.wrapperCard}>
+      {
+        isLogged
+          ? <Favs {...{ addOrRemoveFavs, favsActive }} />
+          : null
+      }
+      <Link
+        href={`${path ? '/movies' : '/series'}/details/${data.id}`}
+      >
+        <Image
+          src={data.poster_path ? `${process.env.API_IMAGE}${data.poster_path}` : '/noImg.webp'}
+          alt="My Image"
+          width={150}
+          height={225}
+          className={styles.image}
+        />
+        <h4>{data.title || data.name} | <span>{data?.vote_average?.toFixed(1)}</span></h4>
+      </Link>
+    </div>
   )
 }
 export default Card

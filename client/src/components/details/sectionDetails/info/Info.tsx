@@ -31,7 +31,7 @@ const Info: FC<InfoProps> = ({ details, cast }) => {
           <div>
             {
               details.genres?.map(genre =>
-                <Link href={`${details.title ? 'movies' : 'series'}/genre/${genre.id}`} key={genre.id}>{genre.name}</Link>
+                <Link className='link' href={`${details.title ? 'movies' : 'series'}/genre/${genre.id}`} key={genre.id}>{genre.name}</Link>
               )
             }
           </div>

@@ -7,7 +7,7 @@ import { validateFavs } from '../middleware/validator';
 
 const favsRouter = express.Router()
 
-favsRouter.post('/', validateFavs, verifyToken, async (req: RequestMasPropUser, res: Response, next: NextFunction): Promise<void> => {
+favsRouter.post('/', validateFavs, verifyToken, async (req: RequestMasPropUser, res: Response): Promise<void> => {
   if (req.user !== undefined) {
     const newFav = new Favs({
       ...req.body,
@@ -25,13 +25,16 @@ favsRouter.post('/', validateFavs, verifyToken, async (req: RequestMasPropUser, 
         status_code: 200,
         data: savedFavs
       });
-    } catch (err) {
-      next(err)
+    } catch (err: any) {
+      res.status(400).send({
+        status_code: 400,
+        error: err.message
+      })
     };
   }
 });
 
-favsRouter.get("/", verifyToken, async (req: RequestMasPropUser, res: Response, next: NextFunction): Promise<void> => {
+favsRouter.get("/", verifyToken, async (req: RequestMasPropUser, res: Response): Promise<void> => {
   if (req.user !== undefined) {
     const id = req.user.id;
     try {
@@ -40,8 +43,11 @@ favsRouter.get("/", verifyToken, async (req: RequestMasPropUser, res: Response, 
         status_code: 200,
         data: user?.favs
       })
-    } catch (err) {
-      next(err)
+    } catch (err: any) {
+      res.status(400).send({
+        status_code: 400,
+        error: err.message
+      })
     }
   }
 })

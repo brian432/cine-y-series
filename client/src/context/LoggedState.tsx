@@ -16,7 +16,8 @@ interface Props {
   children: ReactNode
 }
 const initialState = {
-  isLogged: !!sessionStorage.getItem('token') // utilizo sessionStorage par verificar si el login fue exitoso y persistir el estado
+  isLogged: !!sessionStorage.getItem('token'),
+  favs: [''] // utilizo sessionStorage par verificar si el login fue exitoso y persistir el estado
 }
 
 export const Reducer = (state: AppState, action: Action): AppState => {

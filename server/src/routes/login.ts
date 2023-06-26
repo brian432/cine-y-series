@@ -36,6 +36,7 @@ loginRouter.post('/', validateLogin, async (req: Request, res: Response): Promis
           token,
           username: user.username,
           id: user._id,
+          favs: user.favs
         }
       })
   } catch (err: any) {

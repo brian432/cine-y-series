@@ -12,6 +12,8 @@
   --span-size: clamp(0.875rem, 2vw, 1rem);
   --hover-search: #2d2d2d;
   --border-radius: 5px;
+  --error-color: #FC341B;
+  --hover-auth: #ce685b;
 }
 
 * {
