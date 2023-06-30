@@ -1,6 +1,6 @@
 //login types
 
-import { DataHome } from "./commonTypes"
+import { DataHome, IFavs } from "./commonTypes"
 
 export interface IUser {
   username: string
@@ -34,7 +34,6 @@ export interface IRegisterPost extends Pick<IRegisterResponse, 'username'> {
 export interface ILogin extends Omit<IRegisterPost, 'isAdmin'> { }
 
 export interface ILoginResponse {
-  token: string
   username: string
   id: string
   favs: string[]
@@ -49,5 +48,10 @@ export interface ResponseDataLogin {
 
 export interface ResponseDataFavs {
   status_code: number
-  data: DataHome
+  data: IFavs
+}
+
+export interface ResponseAllDataFavs {
+  status_code: number
+  data: IFavs[]
 }

@@ -7,26 +7,21 @@ import { SectionCardsProps } from '@/types/commonTypes'
 import ShowMore from './showMore/ShowMore'
 import PreviewCard from './previewCard/PreviewCard'
 
-
 const SectionCards: FC<SectionCardsProps> = ({ props, children }) => {
   const [pagination, setPagination] = useState<number>(1)
-
   const {
     mapData: { data, DataLength },
     hasNextPage,
     fetchNextPage,
     isFetchingNextPage,
   } = useMoviesOrSeries(props, pagination)
-
   return (
     <section className={styles.sectionCards}>
       <PreviewCard mapData={data} />
       {children}
       <div className={styles.wrapperCards}>
         {
-          data?.map(data =>
-            <Card key={`${data.id}`} data={data} path={data.title} />
-          )
+          data?.map(media => <Card key={media.id} data={media} />)
         }
       </div>
       {

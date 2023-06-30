@@ -9,9 +9,7 @@ export const useMoviesOrSeries = (
   props: SectionCardsProps["props"],
   pagination: number
 ): ReturnUseMoviesOrSeries => {
-
   const { path, castId, genreId, initialData, filterString, search } = props
-
   const ObjectInitialData = {
     pages: [initialData],
     pageParams: [1]

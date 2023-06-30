@@ -6,16 +6,8 @@ import LinkNav from './linkNav/LinkNav'
 import { Context } from '@/context/LoggedState'
 
 const Nav: FC = () => {
-  const { state: { isLogged }, dispatch } = useContext(Context)
-  const handleLogout = (): void => { // envio el nuevo estado al reducer del context
-    dispatch({
-      type: 'logout',
-      payload: {
-        isLogged: false,
-        favs: ['']
-      }
-    })
-  }
+  const { state: { isLogged }, handleLogout } = useContext(Context)
+
   return (
     <nav className={styles.nav}>
       <Link href='/' className='link'>Home</Link>

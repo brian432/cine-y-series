@@ -32,7 +32,7 @@ const SectionDetails: FC<SectionDetailsProps> = ({ props }) => {
         />
       </div>
       <Info {...{ details, cast }} />{/*cast y los generos van dentro de info*/}
-      {trailers.length > 0 ? <Trailers {...{ trailers }} /> : null}
+      {trailers?.length > 0 ? <Trailers {...{ trailers }} /> : null}
       {similar?.length > 0 ? <Similar {...{ similar, isTablet }} /> : null}
     </main>
   )

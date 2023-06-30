@@ -1,4 +1,4 @@
-import express, { type Response, type NextFunction } from 'express'
+import express, { type Response } from 'express'
 import User from '../models/User'
 import Favs from '../models/Favs'
 import { verifyToken } from '../middleware/verifyToken';
@@ -51,7 +51,7 @@ favsRouter.get("/", verifyToken, async (req: RequestMasPropUser, res: Response):
     }
   }
 })
-favsRouter.delete('/:id', verifyToken, async (req: RequestMasPropUser, res: Response, next: NextFunction): Promise<void> => {
+favsRouter.delete('/:id', verifyToken, async (req: RequestMasPropUser, res: Response): Promise<void> => {
   const { params: { id } } = req;
   if (req.user !== undefined) {
     try {
@@ -66,8 +66,11 @@ favsRouter.delete('/:id', verifyToken, async (req: RequestMasPropUser, res: Resp
         status_code: 200,
         data: favCardDeleted
       });
-    } catch (err) {
-      next(err)
+    } catch (err: any) {
+      res.status(400).json({
+        status_code: 400,
+        error: err.message
+      })
     };
   };
 });

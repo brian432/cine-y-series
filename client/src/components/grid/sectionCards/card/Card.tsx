@@ -3,39 +3,49 @@ import Image from 'next/image'
 import { DataHome } from '@/types/commonTypes'
 import styles from './card.module.css'
 import Link from 'next/link'
-import Favs from '@/components/favs/Favs'
 import { Context } from '@/context/LoggedState'
-import { usePostFavs } from '@/hooks/useFavs'
+import { FavContext } from '@/context/FavsContext'
 
 interface CardProps {
   data: DataHome
-  path?: string
 }
-const Card: FC<CardProps> = ({ data, path }) => {
-  const { state: { isLogged, favs } } = useContext(Context)
-  const favsActive = favs?.includes(`${data.id}`)
-  const { mutate } = usePostFavs()
-  const addOrRemoveFavs = () => {
-    mutate({ data, path })
+
+const Card: FC<CardProps> = ({ data }) => {
+  const pathName = data?.title ? 'movies' : 'series'
+  const { state: { isLogged } } = useContext(Context)
+  const { addOrRemoveFavs, favs, isLoadingDel, isLoadingPost } = useContext(FavContext)
+  const favsActive = favs.find(media => { return media.id == data.id })
+
+  const handleFav = () => {
+    if (isLoadingDel || isLoadingPost) return //si el fetching de agregar o eliminar los favoritos esta cargando, bloqueamos el boton de favoritos
+    addOrRemoveFavs(data, pathName)
   }
+
   return (
     <div className={styles.wrapperCard}>
       {
         isLogged
-          ? <Favs {...{ addOrRemoveFavs, favsActive }} />
+          ? <button className={favsActive ? `${styles.favActive} ${styles.favouriteBtn}` : styles.favouriteBtn} onClick={handleFav}>
+            <Image
+              src='/favorite.svg'
+              alt='favorite'
+              width={25}
+              height={25}
+            />
+          </button >
           : null
       }
       <Link
-        href={`${path ? '/movies' : '/series'}/details/${data.id}`}
+        href={`/${pathName}/details/${data?.id}`}
       >
         <Image
-          src={data.poster_path ? `${process.env.API_IMAGE}${data.poster_path}` : '/noImg.webp'}
+          src={data?.poster_path ? `${process.env.API_IMAGE}${data?.poster_path}` : '/noImg.webp'}
           alt="My Image"
           width={150}
           height={225}
           className={styles.image}
         />
-        <h4>{data.title || data.name} | <span>{data?.vote_average?.toFixed(1)}</span></h4>
+        <h4>{data?.title || data?.name} | <span>{data?.vote_average?.toFixed(1)}</span></h4>
       </Link>
     </div>
   )

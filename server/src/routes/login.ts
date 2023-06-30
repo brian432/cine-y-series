@@ -28,6 +28,10 @@ loginRouter.post('/', validateLogin, async (req: Request, res: Response): Promis
       id: user._id,
     }
     const token = jwt.sign(userForToken, SECRET as string, { expiresIn: '1d' })
+    res.cookie('token', token, {
+      maxAge: 24 * 60 * 60 * 1000,
+      secure: true,
+    })
 
     return res.status(200)
       .json({

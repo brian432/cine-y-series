@@ -5,9 +5,13 @@
 .carouselDiv {
   display: flex;
   align-items: center;
-  max-height: 500px;
+  max-height: 400px;
   overflow: hidden;
   cursor: pointer;
+}
+
+.carouselDiv h4 {
+  display: none;
 }
 
 .swiper-slide {
@@ -20,9 +24,4 @@
   object-fit: cover;
   transition: 0.3s;
   border-radius: var(--border-radius);
-}
-
-.carouselDiv img:hover {
-  scale: 1.02;
-  transition: 0.3s;
 }

@@ -18,14 +18,9 @@ export const useLogin = (): ReturnUseLogin => {
     mutationFn: postLogin,
     onSuccess: (data: ResponseDataLogin) => {
       if (data?.status_code === 200) {
-        console.log(data)
-        sessionStorage.setItem('token', data.data?.token)
         dispatch({
           type: 'logged',
-          payload: {
-            isLogged: true,
-            favs: data.data.favs
-          }
+          payload: { isLogged: true }
         })
         router.replace('/')
       }

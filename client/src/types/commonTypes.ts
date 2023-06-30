@@ -47,6 +47,14 @@ export interface IGenre {
 }
 
 
+//favoritos
+export interface IFavs {
+  data: DataHome
+  path: string
+  user: string
+  id: string
+}
+
 //Lista de filtros
 
 export enum FilterOptions {

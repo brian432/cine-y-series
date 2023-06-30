@@ -1,8 +1,16 @@
 1) Reveer las requests
 2) css de imagen de fondo de details y de slider son los mismos, convertirlo en reutilizable
 3) Limitar los caracteres del overview
-5) Solucionar el padding 1 rem del body, no me permite aplicar 100vh en algunos componentes como auth
 6) Cambiarle el color del boton del swal a naranja
+7) Reveer si utilizar context o pasar los datos por props
+9) Arreglar lo del id que viene como number
+10) Tipar los hooks de useFavs y chequear que los demas esten tipados
+11) Arreglar las queryKey, evaluar si son comillas vacias, no agregarlas para que no queden asi 'movies', '', '', ''
+12) Cambiar el boton de mas.. y menos...
+13) modificar lso enlaces del header
+14) Chequear el cache de los cast, cuando voy a ver las peliculas de un actor y despues voy a las peliculas de otro, se mezclan las peliculas, es decir no se actualiza el cache. agregarlo el nombre del actor a la queryKey 'cast'
+
+
 Ligthouse
 
 1) Agregar labels a los inputs

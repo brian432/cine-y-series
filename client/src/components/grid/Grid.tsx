@@ -5,6 +5,7 @@ import MenuFilter from './menuFilter/MenuFilter'
 import { buildUrl } from '@/utils/buildUrl'
 import CastTitle from './castTitle/CastTitle'
 import NotResults from '../notResults/NotResults'
+import { getFavs } from '@/services/favsFetch'
 
 interface GridProps {
   path: string
@@ -18,7 +19,6 @@ interface GridProps {
 const Grid: FC<GridProps> = async ({ path, castId = '', genreId = '', filterString = '', search = '', castName = '' }) => {
   const url = buildUrl({ path, castId, genreId, pageParam: 1, filterString, search })
   const initialData = await getMoviesOrSeries(url)
-
   return (
     <>
       {

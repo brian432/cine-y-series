@@ -1,6 +1,4 @@
-import { Similar } from '@/types/detailsTypes'
 import { FC } from 'react'
-import Image from 'next/image'
 import styles from './similar.module.css'
 import "swiper/css/bundle"
 // Import Swiper React components
@@ -9,11 +7,11 @@ import { Pagination } from "swiper"
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination"
-import Link from 'next/link'
-import Favs from '@/components/favs/Favs'
+import Card from '@/components/grid/sectionCards/card/Card'
+import { DataHome } from '@/types/commonTypes'
 
 interface SimilarProps {
-  similar: Similar[]
+  similar: DataHome[]
   isTablet: boolean
 }
 const Similar: FC<SimilarProps> = ({ similar, isTablet }) => {
@@ -32,15 +30,7 @@ const Similar: FC<SimilarProps> = ({ similar, isTablet }) => {
         {
           similar?.map(movie =>
             <SwiperSlide className={styles.carouselDiv} key={movie.id}>
-              <Link href={`${movie.title ? '/movies' : '/series'}/details/${movie.id}`}>
-                <Favs />
-                <Image
-                  src={movie.poster_path ? `${process.env.API_IMAGE}/${movie.poster_path}` : '/noImg.webp'}
-                  alt='image'
-                  width={250}
-                  height={375}
-                />
-              </Link>
+              <Card data={movie} />
             </SwiperSlide>
           )
         }

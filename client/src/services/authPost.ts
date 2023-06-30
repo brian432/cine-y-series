@@ -7,10 +7,10 @@ export const postLogin = async (data: ILogin): Promise<any> => {
       headers: {
         'Content-type': 'application/json'
       },
+      credentials: 'include',
       body: JSON.stringify(data)
     })
     const json = await res.json()
-
     if (json.status_code === 200 || json.status_code === 401) return json
     throw new Error('Error interno del servidor')
   } catch (err) {

@@ -3,6 +3,7 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import { ReactQueryProvider } from './reactQueryProvider'
 import { Provider } from '@/context/LoggedState'
+import { FavProvider } from '@/context/FavsContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,7 +23,9 @@ export default function RootLayout({
         <Provider>
           <Header />
           <ReactQueryProvider>
-            {children}
+            <FavProvider>
+              {children}
+            </FavProvider>
           </ReactQueryProvider>
         </Provider>
       </body>

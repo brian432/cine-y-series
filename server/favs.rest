@@ -1,6 +1,6 @@
-GET http://localhost:3001/favs
+GET http://localhost:3001/favs/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OTYyNDU1M2MwNTRmMDM0YTNmNWM4ZCIsImlhdCI6MTY4NzgwOTU4MCwiZXhwIjoxNjg3ODk1OTgwfQ.Ab1MHlkij3SnOelHNRFqJgvGeOLK7_Jv-M0OqFsURMM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OTYyNDU1M2MwNTRmMDM0YTNmNWM4ZCIsImlhdCI6MTY4Nzg5OTE4OCwiZXhwIjoxNjg3OTg1NTg4fQ.65N3ep6uzbwTe-GS5CjpKoYpicIokDcdTFMDKND-t_M
 
 {
    "data":{

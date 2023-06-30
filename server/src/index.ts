@@ -7,7 +7,10 @@ import loginRouter from './routes/login'
 import favsRouter from './routes/favs'
 
 const app = express()
-app.use(cors())
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true, // Permite el intercambio de cookies entre dominios
+}))
 app.use(express.json())
 dotenv.config()
 
