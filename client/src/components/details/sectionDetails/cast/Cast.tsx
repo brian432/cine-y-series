@@ -18,7 +18,7 @@ const Cast: FC<CastProps> = ({ cast }) => {
               href={`/cast/${actor.id}/${actor.name.replace(/ /g, "-")}`}
               className={styles.cast}>
               <Image
-                src={actor.profile_path ? `${process.env.API_IMAGE}/${actor.profile_path}` : '/noImg.webp'}
+                src={actor.profile_path ? `${process.env.NEXT_PUBLIC_API_IMAGE}/${actor.profile_path}` : '/noImg.webp'}
                 alt='actor Image'
                 width={80}
                 height={124}

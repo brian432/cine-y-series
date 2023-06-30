@@ -39,7 +39,7 @@ const Card: FC<CardProps> = ({ data }) => {
         href={`/${pathName}/details/${data?.id}`}
       >
         <Image
-          src={data?.poster_path ? `${process.env.API_IMAGE}${data?.poster_path}` : '/noImg.webp'}
+          src={data?.poster_path ? `${process.env.NEXT_PUBLIC_API_IMAGE}${data?.poster_path}` : '/noImg.webp'}
           alt="My Image"
           width={150}
           height={225}

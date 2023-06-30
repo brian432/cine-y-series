@@ -28,10 +28,10 @@ export const getMoviesOrSeries = async ({ url, pageParam }: IFetchMoviesOrSeries
 export const getMoviesOrSeriesDetails = async (path: string, movieID: string) => {
   try {
     const res = await Promise.all([
-      fetch(`${process.env.API_DETAILS}${path === "series" ? "tv" : "movie"}/${movieID}?${process.env.API_KEY}&language=es`),
-      fetch(`${process.env.API_DETAILS}${path === "series" ? "tv" : "movie"}/${movieID}/credits?${process.env.API_KEY}&language=es`),
-      fetch(`${process.env.API_DETAILS}${path === "series" ? "tv" : "movie"}/${movieID}/similar?${process.env.API_KEY}&language=es&page=1`),
-      fetch(`${process.env.API_DETAILS}${path === "series" ? "tv" : "movie"}/${movieID}/videos?${process.env.API_KEY}&language=en&page=1`),
+      fetch(`${process.env.NEXT_PUBLIC_API_DETAILS}${path === "series" ? "tv" : "movie"}/${movieID}?${process.env.NEXT_PUBLIC_API_KEY}&language=es`),
+      fetch(`${process.env.NEXT_PUBLIC_API_DETAILS}${path === "series" ? "tv" : "movie"}/${movieID}/credits?${process.env.NEXT_PUBLIC_API_KEY}&language=es`),
+      fetch(`${process.env.NEXT_PUBLIC_API_DETAILS}${path === "series" ? "tv" : "movie"}/${movieID}/similar?${process.env.NEXT_PUBLIC_API_KEY}&language=es&page=1`),
+      fetch(`${process.env.NEXT_PUBLIC_API_DETAILS}${path === "series" ? "tv" : "movie"}/${movieID}/videos?${process.env.NEXT_PUBLIC_API_KEY}&language=en&page=1`),
     ])
     const [details, cast, { results: similar }, { results: trailers }] = await Promise.all(res.map(result => result.json()))
     return { details, cast, similar, trailers }

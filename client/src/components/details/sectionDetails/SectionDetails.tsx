@@ -25,7 +25,7 @@ const SectionDetails: FC<SectionDetailsProps> = ({ props }) => {
     <main>
       <div className={styles.background}>
         <Image
-          src={details?.backdrop_path || details.poster_path ? `${process.env.API_IMAGE_BACKGROUND}/${!isTablet ? details.backdrop_path : details.poster_path || details.poster_path}` : ''}
+          src={details?.backdrop_path || details?.poster_path ? `${process.env.NEXT_PUBLIC_API_IMAGE_BACKGROUND}/${!isTablet ? details.backdrop_path : details.poster_path || details.poster_path}` : '/noImg.webp'}
           width={!isTablet ? 900 : 200}
           height={!isTablet ? 506 : 300}
           alt='imagen card'

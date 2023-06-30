@@ -8,7 +8,7 @@ interface IPostFav {
 export const postFavs = async ({ data, pathName }: IPostFav): Promise<any> => {
   const token = getCookie('token')
   try {
-    const res = await fetch('http://localhost:3001/favs', {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}/favs`, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -34,7 +34,7 @@ export const postFavs = async ({ data, pathName }: IPostFav): Promise<any> => {
 export const getFavs = async (): Promise<any> => {
   const token = getCookie('token')
   try {
-    const res = await fetch('http://localhost:3001/favs', {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}/favs`, {
       method: 'GET',
       headers: {
         'Content-type': 'application/json',
@@ -53,7 +53,7 @@ export const getFavs = async (): Promise<any> => {
 export const delFavs = async (id: string): Promise<any> => {
   const token = getCookie('token')
   try {
-    const res = await fetch(`http://localhost:3001/favs/${id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}/favs/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-type': 'application/json',

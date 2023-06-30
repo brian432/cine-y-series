@@ -17,7 +17,7 @@ const Info: FC<InfoProps> = ({ details, cast }) => {
     <section className={styles.details}>
       <div className={styles.divImg}>
         <Image
-          src={details?.poster_path ? `${process.env.API_IMAGE}${details.poster_path}` : '/noImg.webp'}
+          src={details?.poster_path ? `${process.env.NEXT_PUBLIC_API_IMAGE}${details.poster_path}` : '/noImg.webp'}
           alt="My Image"
           width={150}
           height={225}
