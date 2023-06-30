@@ -2,7 +2,7 @@ import { ILogin, IRegisterPost } from "@/types/userTypes"
 
 export const postLogin = async (data: ILogin): Promise<any> => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}/login`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}login`, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json'
@@ -20,7 +20,7 @@ export const postLogin = async (data: ILogin): Promise<any> => {
 
 export const postUser = async (data: IRegisterPost): Promise<any> => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}/register`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_SERVER}register`, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json'
