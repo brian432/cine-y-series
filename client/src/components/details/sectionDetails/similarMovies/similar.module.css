@@ -4,7 +4,7 @@
 
 .carouselDiv {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   max-height: 400px;
   overflow: hidden;
   cursor: pointer;

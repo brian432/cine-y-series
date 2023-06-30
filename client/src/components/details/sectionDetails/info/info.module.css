@@ -59,6 +59,19 @@
   z-index: 9;
 }
 
+.desc {
+  display: inline;
+}
+
+.more {
+  cursor: pointer;
+  color: var(--color-button);
+}
+
+.more:hover {
+  color: var(--hover-auth)
+}
+
 @media screen and (min-width: 1200px) {
   .info {
     flex: 2;

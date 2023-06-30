@@ -1,20 +1,23 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import Image from 'next/image'
 import styles from './info.module.css'
 import { ICast, DetailsID } from '@/types/detailsTypes'
 import Cast from '../cast/Cast'
 import Link from 'next/link'
+import { limitString } from '@/utils/limitString'
 
 interface InfoProps {
   details: DetailsID
   cast: ICast[]
 }
 const Info: FC<InfoProps> = ({ details, cast }) => {
+  const [more, setMore] = useState<boolean>(false)
+  const desc = limitString(details?.overview)
   return (
     <section className={styles.details}>
       <div className={styles.divImg}>
         <Image
-          src={details.poster_path ? `${process.env.API_IMAGE}${details.poster_path}` : '/noImg.webp'}
+          src={details?.poster_path ? `${process.env.API_IMAGE}${details.poster_path}` : '/noImg.webp'}
           alt="My Image"
           width={150}
           height={225}
@@ -24,7 +27,16 @@ const Info: FC<InfoProps> = ({ details, cast }) => {
       <div className={styles.info}>
         <h1 className={styles.title}>{details.name || details.title}<span className={styles.vote}>{details.vote_average?.toFixed(1) || 0}</span></h1>
         <p>Fecha de estreno: {details.first_air_date || details.release_date}</p>
-        <p>{details.overview}</p>
+        <div>
+          <p className={styles.desc}>{more ? details?.overview : desc}</p>
+          {
+            details?.overview.length > 250
+              ? <span className={styles.more} onClick={() => setMore(!more)}>
+                {more ? ' menos...' : ' ...más'}
+              </span>
+              : null
+          }
+        </div>
         {cast ? <Cast {...{ cast }} /> : null}
         <div className={styles.genresWrapper}>
           <h2> Generos:</h2>
@@ -38,7 +50,7 @@ const Info: FC<InfoProps> = ({ details, cast }) => {
         </div>
       </div>
 
-    </section>
+    </section >
   )
 }
 export default Info

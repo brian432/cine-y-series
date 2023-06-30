@@ -1,4 +1,4 @@
-.burguer{
+.burguer {
   display: block;
   cursor: pointer;
 }
@@ -14,20 +14,22 @@
 .linea1 {
   transform: rotate(-45deg) translate(-5px, 6px);
 }
+
 .linea2 {
   opacity: 0;
 }
+
 .linea3 {
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
-@media screen and (min-width: 424px) {
-  .wrapperBurguer{
+@media screen and (min-width: 500px) {
+  .wrapperBurguer {
     display: none;
   }
 }
 
-.navWrapper nav{
+.navWrapper nav {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -35,7 +37,7 @@
   height: 100%;
 }
 
-.navWrapper{
+.navWrapper {
   position: absolute;
   top: 8vh;
   height: 92vh;
@@ -44,8 +46,9 @@
   overflow: hidden;
   background-color: var(--secondary-color);
 }
+
 .menuActive {
-  transform: translateX(0%)!important;
+  transform: translateX(0%) !important;
   animation: menuActive .5s forwards;
 }
 

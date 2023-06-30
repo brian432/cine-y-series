@@ -1,9 +1,9 @@
-.nav{
+.nav {
   display: none;
 }
 
-@media screen and (min-width: 424px) {
-  .nav{
+@media screen and (min-width: 500px) {
+  .nav {
     display: flex;
     flex-direction: row;
     gap: 1.5rem;

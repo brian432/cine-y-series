@@ -8,7 +8,8 @@ export const swalAlert = async (title: string, text: string = 'Intentelo nuevame
     width: '400px',
     timer: 5000,
     timerProgressBar: true,
-    confirmButtonText: 'Aceptar'
+    confirmButtonText: 'Aceptar',
+    confirmButtonColor: '#FC341B'
   })
 }
 
@@ -18,7 +19,8 @@ export const swalSuccess = async (title: string, router: any): Promise<SweetAler
     width: '400px',
     timer: 5000,
     timerProgressBar: true,
-    confirmButtonText: 'Aceptar'
+    confirmButtonText: 'Aceptar',
+    confirmButtonColor: '#FC341B'
   }).then(result => {
     if (result.isConfirmed) {
       if (title === 'Producto agregado correctamente') return result

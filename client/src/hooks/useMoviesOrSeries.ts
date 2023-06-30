@@ -21,7 +21,7 @@ export const useMoviesOrSeries = (
     hasNextPage,
     fetchNextPage
   } = useInfiniteQuery({
-    queryKey: [path || 'movies', genreId, filterString, search],
+    queryKey: [path || 'movies', genreId, filterString, search, castId],
     queryFn: ({ pageParam = 1 }) => getMoviesOrSeries(buildUrl({ path, castId, genreId, pageParam, filterString, search })),
     getNextPageParam: (lastPage, allPages) => lastPage.nextPage,
     initialData: ObjectInitialData,
