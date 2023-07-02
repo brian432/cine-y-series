@@ -32,7 +32,7 @@ loginRouter.post('/', validateLogin, async (req: Request, res: Response): Promis
       maxAge: 24 * 60 * 60 * 1000,
       secure: true,
       httpOnly: false,
-      domain: '.onrender.com',
+      domain: 'cine-y-series.vercel.app',
       sameSite: 'none'
     })
 
