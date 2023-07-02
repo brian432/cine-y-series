@@ -8,10 +8,9 @@ interface SliderButtonsProps {
   sliderImages: DataHome[]
   setPage: Dispatch<SetStateAction<number>>
   page: number
-  isTablet: boolean
 }
 
-const SliderButtons: FC<SliderButtonsProps> = ({ sliderImages, setPage, page, isTablet }) => {
+const SliderButtons: FC<SliderButtonsProps> = ({ sliderImages, setPage, page }) => {
   const handlePage = (nextOrBack: string): void => {
     nextOrBack === '+'
       ? setPage((prevIndex) => (prevIndex + 1) % sliderImages.length)
@@ -27,17 +26,16 @@ const SliderButtons: FC<SliderButtonsProps> = ({ sliderImages, setPage, page, is
         className={styles.button}
         onClick={() => handlePage('-')}
       />
+      <LinkSlider id={sliderImages[page].id} />
       {
-        isTablet
-          ? <LinkSlider id={sliderImages[page].id} />
-          : sliderImages.map((media, index) =>
-            <span
-              key={media.id}
-              className={index === page ? styles.selected : styles.normal}
-            >
-              0{index + 1}
-            </span>
-          )
+        sliderImages.map((media, index) =>
+          <span
+            key={media.id}
+            className={index === page ? `${styles.selected} ${styles.page}` : `${styles.normal} ${styles.page}`}
+          >
+            0{index + 1}
+          </span>
+        )
       }
       <Image
         src='/siguiente.svg'

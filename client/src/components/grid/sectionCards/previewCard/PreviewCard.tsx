@@ -13,19 +13,14 @@ interface PreviewCardProps {
 
 const PreviewCard: FC<PreviewCardProps> = ({ mapData }) => {
   const [page, setPage] = useState<number>(0)
-  const { isTablet } = useResize()
   const sliderImages: DataHome[] = mapData.slice(0, 5)
 
   return (
     <section className={styles.sectionPreview}>
-      <Slider {...{ sliderImages, page, isTablet }} />
+      <Slider {...{ sliderImages, page }} />
       <h1 className={styles.title}>{sliderImages[page]?.title || sliderImages[page]?.name}</h1>
-      {
-        isTablet
-          ? null
-          : <LinkDetails {...{ sliderImages, page }} />
-      }
-      <SliderButtons {...{ setPage, sliderImages, page, isTablet }} />
+      <LinkDetails {...{ sliderImages, page }} />
+      <SliderButtons {...{ setPage, sliderImages, page }} />
     </section >
   )
 }

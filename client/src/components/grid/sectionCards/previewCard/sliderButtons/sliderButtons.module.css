@@ -1,4 +1,4 @@
-.buttons{
+.buttons {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -7,22 +7,37 @@
   z-index: 9;
 }
 
-.buttons img{
+.buttons img {
   cursor: pointer;
 }
 
-.normal{
+.normal {
   font-size: 1.5rem;
 }
 
-.selected{
+.selected {
   font-size: 5rem;
   color: var(--color-button);
   font-weight: 200;
 }
 
+.page {
+  display: none;
+}
+
+
+@media screen and (min-width: 700px) {
+  .page {
+    display: inline-block;
+  }
+
+  .buttons a {
+    display: none !important;
+  }
+}
+
 @media screen and (min-width: 768px) {
-  .buttons{
+  .buttons {
     justify-self: end;
   }
 }

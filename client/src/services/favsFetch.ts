@@ -1,5 +1,7 @@
+import { Context } from "@/context/LoggedState";
 import { DataHome } from "@/types/commonTypes";
 import { getCookie } from "cookies-next";
+import { useContext } from "react";
 interface IPostFav {
   data: DataHome
   pathName: string

@@ -1,14 +1,15 @@
 import { DataHome } from '@/types/commonTypes'
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import Image from 'next/image'
 import styles from './slider.module.css'
+import useResize from '@/hooks/useResize'
 
 interface SliderProps {
   sliderImages: DataHome[]
   page: number
-  isTablet: boolean
 }
-const Slider: FC<SliderProps> = ({ sliderImages, page, isTablet }) => {
+const Slider: FC<SliderProps> = ({ sliderImages, page }) => {
+  const { isTablet } = useResize()
   return (
     <>
       {
@@ -17,13 +18,15 @@ const Slider: FC<SliderProps> = ({ sliderImages, page, isTablet }) => {
           return <div key={`${img.id}`} className={`${index === page ? styles.slider : styles.hidden}`}>
             <Image
               src={urlImg}
-              width={isTablet ? 200 : 900}
-              height={isTablet ? 300 : 506}
+              width={!isTablet ? 900 : 200}
+              height={!isTablet ? 506 : 300}
               alt='imagen card'
               priority={true} //Esta propiedad es necesaria para que las imagenes del slider no esperen a descargarse, de lo contrario tardara en cargarse y volvera a descargarse la imagen cada vez que cambiemos de imagen en el slider
             />
+
           </div>
         })
+
       }
     </>
   )

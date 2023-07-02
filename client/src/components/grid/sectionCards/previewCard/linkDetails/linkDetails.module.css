@@ -1,12 +1,12 @@
-.link{
-  display: flex;
+.link {
+  display: none;
   gap: 1rem;
   align-items: center;
   grid-area: details;
   z-index: 9;
 }
 
-.link a{
+.link a {
   width: 120px;
   height: 40px;
   display: flex;
@@ -14,7 +14,7 @@
   justify-content: center;
 }
 
-.link span{
+.link span {
   color: #f5be08;
 }
 
@@ -23,8 +23,14 @@
   margin-right: 2px;
 }
 
+@media screen and (min-width: 700px) {
+  .link {
+    display: flex;
+  }
+}
+
 @media screen and (min-width: 1024px) {
-  .link a{
+  .link a {
     width: 200px;
     height: 70px;
     font-size: 1.5rem;
