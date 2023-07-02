@@ -30,7 +30,7 @@ const Info: FC<InfoProps> = ({ details, cast }) => {
         <div>
           <p className={styles.desc}>{more ? details?.overview : desc}</p>
           {
-            details?.overview.length > 250
+            details?.overview?.length > 250
               ? <span className={styles.more} onClick={() => setMore(!more)}>
                 {more ? ' menos...' : ' ...más'}
               </span>
@@ -42,7 +42,7 @@ const Info: FC<InfoProps> = ({ details, cast }) => {
           <h2> Generos:</h2>
           <div>
             {
-              details.genres?.map(genre =>
+              details?.genres?.map(genre =>
                 <Link className='link' href={`${details.title ? 'movies' : 'series'}/genre/${genre.id}`} key={genre.id}>{genre.name}</Link>
               )
             }

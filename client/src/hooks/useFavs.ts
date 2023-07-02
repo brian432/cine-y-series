@@ -1,8 +1,10 @@
+import { Context } from "@/context/LoggedState"
 import { delFavs, getFavs, postFavs } from "@/services/favsFetch"
 import { IFavs } from "@/types/commonTypes"
 import { ResponseDataFavs } from "@/types/userTypes"
 import { swalAlert } from "@/utils/swal"
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
+import { useContext } from "react"
 
 export const usePostFavs = () => {
   const queryClient = useQueryClient()
@@ -36,9 +38,12 @@ interface ReturnAllFavs {
 
 //Obtener todos los favoritos del usuario
 export const useGetFavs = (): ReturnAllFavs => {
+  const { state: { isLogged } } = useContext(Context)
+
   const { data, isLoading, isError } = useQuery({
     queryKey: ['favs'],
-    queryFn: getFavs
+    queryFn: getFavs,
+    enabled: isLogged
   })
   if (data?.status_code === 200) return { data: data.data, isLoading, isError }
   return { data: [], isLoading, isError }

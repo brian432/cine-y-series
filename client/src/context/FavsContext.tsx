@@ -1,7 +1,9 @@
 'use client'
 import { useDelFavs, useGetFavs, usePostFavs } from '@/hooks/useFavs'
 import { DataHome } from '@/types/commonTypes'
-import React, { createContext, ReactNode, FC, useEffect, useState } from 'react'
+import React, { createContext, ReactNode, FC, useEffect, useState, useContext } from 'react'
+import { Context } from './LoggedState'
+
 
 interface AppContext {
   favs: DataHome[]

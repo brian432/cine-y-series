@@ -45,6 +45,7 @@ const Filters: FC<FiltersProps> = ({ path, initialData }) => {
           value={selectedOptionFilter}
           onChange={handleSelectFilter}
           instanceId='ssssw'
+          isSearchable={false}
           theme={(theme) => ({
             ...theme,
             colors: {
@@ -64,6 +65,7 @@ const Filters: FC<FiltersProps> = ({ path, initialData }) => {
           value={selectedOptionGenre}
           onChange={handleSelectGenre}
           instanceId='dsadas'
+          isSearchable={false}
           theme={(theme) => ({
             ...theme,
             colors: {

@@ -9,7 +9,7 @@ const LinkSlider: FC<LinkSliderProps> = ({ id, path }) => {
   return (
     <Link
       href={`${path ? '/movies' : '/series'}/details/${id}`}
-      className={`btn`}
+      className='btn'
     >
       Ver detalles
     </Link>
