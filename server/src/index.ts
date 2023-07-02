@@ -11,6 +11,11 @@ app.use(cors({
   origin: 'https://cine-y-series.vercel.app',
   credentials: true, // Permite el intercambio de cookies entre dominios
 }))
+app.use(function (_req, res, next) {
+  res.header("Access-Control-Allow-Origin", "https://cine-y-series.vercel.app");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 app.use(express.json())
 dotenv.config()
 
