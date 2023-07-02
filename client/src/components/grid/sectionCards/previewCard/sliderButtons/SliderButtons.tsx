@@ -26,7 +26,7 @@ const SliderButtons: FC<SliderButtonsProps> = ({ sliderImages, setPage, page }) 
         className={styles.button}
         onClick={() => handlePage('-')}
       />
-      <LinkSlider id={sliderImages[page].id} />
+      <LinkSlider id={sliderImages[page].id} path={sliderImages[page]?.title} />
       {
         sliderImages.map((media, index) =>
           <span

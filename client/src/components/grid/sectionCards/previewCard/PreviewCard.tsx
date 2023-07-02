@@ -5,7 +5,6 @@ import styles from './previewCard.module.css'
 import SliderButtons from './sliderButtons/SliderButtons'
 import Slider from './slider/Slider'
 import LinkDetails from './linkDetails/LinkDetails'
-import useResize from '@/hooks/useResize'
 
 interface PreviewCardProps {
   mapData: DataHome[]
