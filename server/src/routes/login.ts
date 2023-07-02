@@ -31,7 +31,6 @@ loginRouter.post('/', validateLogin, async (req: Request, res: Response): Promis
     res.cookie('token', token, {
       maxAge: 24 * 60 * 60 * 1000,
       secure: true,
-      domain: 'https://cine-y-series.vercel.app/',
       sameSite: 'none'
     })
 
