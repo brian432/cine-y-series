@@ -32,7 +32,7 @@ loginRouter.post('/', validateLogin, async (req: Request, res: Response): Promis
       maxAge: 24 * 60 * 60 * 1000,
       secure: true,
       httpOnly: false,
-      domain: 'cine-y-series.vercel.app',
+      domain: '.vercel.app',
       sameSite: 'none'
     })
 
