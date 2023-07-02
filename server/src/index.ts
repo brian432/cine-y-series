@@ -8,7 +8,7 @@ import favsRouter from './routes/favs'
 
 const app = express()
 app.use(cors({
-  origin: 'https://cine-y-series.vercel.app/',
+  origin: 'https://cine-y-series.vercel.app',
   credentials: true, // Permite el intercambio de cookies entre dominios
 }))
 app.use(express.json())
