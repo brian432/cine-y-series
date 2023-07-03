@@ -21,6 +21,10 @@ dotenv.config()
 app.use('/register', registerRouter)
 app.use('/login', loginRouter)
 app.use('/favs', favsRouter)
+app.get('/uptime-robot-check', (_req, res) => {
+  res.status(200).send('UptimeRobot check passed');
+})
+
 const {
   PORT
 } = process.env
