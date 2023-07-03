@@ -14,7 +14,7 @@ const Trailers: FC<trailersProps> = ({ trailers }) => {
             <div className={styles.videoResponsive}>
               <iframe
                 className={styles.iframe}
-                src={`https://www.youtube.com/embed/${trailer.key}`}
+                src={`https://www.youtube.com/embed/${trailer?.key}`}
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

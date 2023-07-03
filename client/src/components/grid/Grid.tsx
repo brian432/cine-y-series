@@ -15,7 +15,6 @@ interface GridProps {
   filterString?: string
   castName?: string
 }
-{/* @ts-expect-error Async Server Component */ }
 const Grid: FC<GridProps> = async ({ path, castId = '', genreId = '', filterString = '', search = '', castName = '' }) => {
   const url = buildUrl({ path, castId, genreId, pageParam: 1, filterString, search })
   const initialData = await getMoviesOrSeries(url)

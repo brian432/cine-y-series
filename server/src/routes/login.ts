@@ -28,13 +28,10 @@ loginRouter.post('/', validateLogin, async (req: Request, res: Response): Promis
       id: user._id,
     }
     const token = jwt.sign(userForToken, SECRET as string, { expiresIn: '1d' })
-    res.cookie('token', token, {
+    /*res.cookie('token', token, { //al publicar el frontend y el backend en diferentes dominios, hay un problema de dns diferentes y por eso no me acepta el token en el navegador.
       maxAge: 24 * 60 * 60 * 1000,
-      secure: true,
-      httpOnly: false,
-      domain: 'cine-y-series.vercel.app',
-      sameSite: 'none'
-    })
+      secure: true
+    })*/
 
     return res.status(200)
       .json({

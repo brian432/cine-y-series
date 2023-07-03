@@ -14,7 +14,7 @@ const Slider: FC<SliderProps> = ({ sliderImages, page }) => {
     <>
       {
         sliderImages?.map((img, index) => {
-          const urlImg = `${process.env.NEXT_PUBLIC_API_IMAGE_BACKGROUND}/${!isTablet ? img.backdrop_path : img.poster_path || img.poster_path}`
+          const urlImg = `${process.env.NEXT_PUBLIC_API_IMAGE_BACKGROUND}/${!isTablet ? img?.backdrop_path : img?.poster_path}`
           return <div key={`${img.id}`} className={`${index === page ? styles.slider : styles.hidden}`}>
             <Image
               src={urlImg}

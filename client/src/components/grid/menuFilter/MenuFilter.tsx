@@ -9,7 +9,6 @@ interface MenuFilterProps {
   path: string
 }
 
-{/* @ts-expect-error Async Server Component */ }
 const MenuFilter: FC<MenuFilterProps> = async ({ path }) => {
   const initialData = await getGenres(path)
   return (

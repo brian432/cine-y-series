@@ -10,7 +10,7 @@ interface CategorysProps {
     search: string
   }
 }
-{/* @ts-expect-error Async Server Component */ }
+
 const Category: FC<CategorysProps> = async ({ params: { categorys }, searchParams: { search } }) => {
   const [category, filter, id] = categorys
   const isValidCategory = ["movies", "series"].includes(category)

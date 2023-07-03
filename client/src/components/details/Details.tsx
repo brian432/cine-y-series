@@ -8,7 +8,6 @@ interface DetailsProps {
   mediaId: string
 }
 
-{/* @ts-expect-error Async Server Component */ }
 const Details: FC<DetailsProps> = async ({ path, mediaId }) => {
   const initialData: Details = await getMoviesOrSeriesDetails(path, mediaId)
   return (
