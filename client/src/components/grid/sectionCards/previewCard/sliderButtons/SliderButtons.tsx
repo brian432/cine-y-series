@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Dispatch, FC, SetStateAction } from 'react'
 import Image from 'next/image'
 import styles from './sliderButtons.module.css'
@@ -18,14 +19,15 @@ const SliderButtons: FC<SliderButtonsProps> = ({ sliderImages, setPage, page }) 
   }
   return (
     <div className={styles.buttons}>
-      <Image
+      {/*<Image
         src='/anterior.svg'
         alt='anterior'
         width={50}
         height={50}
         className={styles.button}
         onClick={() => handlePage('-')}
-      />
+  />*/}
+      <img src='/anterior.svg' alt='anterior' className={styles.button} onClick={() => handlePage('-')} />
       <LinkSlider id={sliderImages[page].id} path={sliderImages[page]?.title} />
       {
         sliderImages.map((media, index) =>
@@ -37,14 +39,15 @@ const SliderButtons: FC<SliderButtonsProps> = ({ sliderImages, setPage, page }) 
           </span>
         )
       }
-      <Image
+      {/*<Image
         src='/siguiente.svg'
         alt='siguiente'
         width={50}
         height={50}
         className={styles.button}
         onClick={() => handlePage('+')}
-      />
+    />*/}
+      <img src='/siguiente.svg' alt='siguiente' onClick={() => handlePage('+')} className={styles.button} />
     </div>
   )
 }

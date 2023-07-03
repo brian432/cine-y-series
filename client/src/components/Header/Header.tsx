@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from 'next/image'
 import { FC } from 'react'
 import styles from './header.module.css'
@@ -10,12 +11,13 @@ const Header: FC = () => {
   return (
     <header className={`flex ${styles.header}`}>
       <Link href='/'>
-        <Image
+        {/*<Image
           src="/logo.png"
           alt="My Image"
           width={50}
           height={50}
-        />
+  />*/}
+        <img src='/logo.png' alt="My Image" />
       </Link>
       <Nav />
       <Burguer>

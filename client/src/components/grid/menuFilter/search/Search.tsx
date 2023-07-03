@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client'
 import { ChangeEvent, FC, FormEvent, useState } from 'react'
 import styles from './search.module.css'
@@ -22,12 +23,13 @@ const Search: FC<SearchProps> = ({ path }) => {
     <form className={styles.search} onSubmit={handleSearch}>
       <input type='search' placeholder='Search' onChange={handleChange} minLength={3} value={search} />
       <button type='submit'>
-        <Image
+        {/*<Image
           src="/search.svg"
           alt="My Image"
           width={30}
           height={30}
-        />
+        />*/}
+        <img src="/search.svg" alt='search image' />
       </button>
     </form>
   )

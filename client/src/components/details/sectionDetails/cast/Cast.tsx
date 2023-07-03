@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { FC } from 'react'
 import Image from 'next/image'
 import styles from './cast.module.css'
@@ -17,12 +18,13 @@ const Cast: FC<CastProps> = ({ cast }) => {
               key={actor.id}
               href={`/cast/${actor.id}/${actor.name.replace(/ /g, "-")}`}
               className={styles.cast}>
-              <Image
+              {/*<Image
                 src={actor.profile_path ? `${process.env.NEXT_PUBLIC_API_IMAGE}/${actor.profile_path}` : '/noImg.webp'}
                 alt='actor Image'
                 width={80}
                 height={124}
-              />
+              />*/}
+              <img src={actor.profile_path ? `${process.env.NEXT_PUBLIC_API_IMAGE}/${actor.profile_path}` : '/noImg.webp'} alt='actor image' />
               <p>{actor.name}</p>
             </Link>
           )

@@ -11,6 +11,8 @@
 
 .cast img {
   border-radius: var(--border-radius);
+  width: 80px;
+  height: 124px;
 }
 
 .cast:hover {

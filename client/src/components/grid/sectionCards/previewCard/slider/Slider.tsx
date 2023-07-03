@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { DataHome } from '@/types/commonTypes'
 import { FC, useEffect, useState } from 'react'
 import Image from 'next/image'
@@ -14,16 +15,16 @@ const Slider: FC<SliderProps> = ({ sliderImages, page }) => {
     <>
       {
         sliderImages?.map((img, index) => {
-          const urlImg = `${process.env.NEXT_PUBLIC_API_IMAGE_BACKGROUND}/${!isTablet ? img?.backdrop_path : img?.poster_path}`
+          const urlImg = `${process.env.NEXT_PUBLIC_API_IMAGE_BACKGROUND}${!isTablet ? img?.backdrop_path : img?.poster_path}`
           return <div key={`${img.id}`} className={`${index === page ? styles.slider : styles.hidden}`}>
-            <Image
+            {/*<Image
               src={urlImg}
               width={!isTablet ? 900 : 200}
               height={!isTablet ? 506 : 300}
               alt='imagen card'
               priority={true} //Esta propiedad es necesaria para que las imagenes del slider no esperen a descargarse, de lo contrario tardara en cargarse y volvera a descargarse la imagen cada vez que cambiemos de imagen en el slider
-            />
-
+           />*/}
+            <img src={urlImg} alt='imagen card' />
           </div>
         })
 

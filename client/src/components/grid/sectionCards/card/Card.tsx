@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { FC, useContext } from 'react'
 import Image from 'next/image'
 import { DataHome } from '@/types/commonTypes'
@@ -26,25 +27,27 @@ const Card: FC<CardProps> = ({ data }) => {
       {
         isLogged
           ? <button className={favsActive ? `${styles.favActive} ${styles.favouriteBtn}` : styles.favouriteBtn} onClick={handleFav}>
-            <Image
+            {/*<Image
               src='/favorite.svg'
               alt='favorite'
               width={25}
               height={25}
-            />
+            />*/}
+            <img src='/favorite.svg' alt='favorite.svg' />
           </button >
           : null
       }
       <Link
         href={`/${pathName}/details/${data?.id}`}
       >
-        <Image
+        {/*<Image
           src={data?.poster_path ? `${process.env.NEXT_PUBLIC_API_IMAGE}${data?.poster_path}` : '/noImg.webp'}
           alt="My Image"
           width={150}
           height={225}
           className={styles.image}
-        />
+        />*/}
+        <img src={data?.poster_path ? `${process.env.NEXT_PUBLIC_API_IMAGE}${data?.poster_path}` : '/noImg.webp'} alt='poster' className={styles.image} />
         <h4>{data?.title || data?.name} | <span>{data?.vote_average?.toFixed(1)}</span></h4>
       </Link>
     </div>
