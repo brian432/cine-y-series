@@ -63,6 +63,11 @@
   transition: 0.5s;
 }
 
+.favouriteBtn img {
+  width: 25px;
+  height: 25px;
+}
+
 .favActive {
   transform: rotate(360deg);
   background-color: var(--color-button);
