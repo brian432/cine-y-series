@@ -1,8 +1,12 @@
 {
-  "devDependencies": {
-    "@types/jsonwebtoken": "^9.0.2"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-all": "npm run install-server && npm run install-client",
+    "install-server": "cd server && npm install",
+    "install-client": "cd client && npm install"
   },
-  "dependencies": {
-    "express-validator": "^7.0.1"
-  }
+  "workspaces": [
+    "server",
+    "client"
+  ]
 }
